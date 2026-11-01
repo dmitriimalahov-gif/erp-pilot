@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#153e3a">
+  <meta name="description" content="erp pilot — мобильный вход в отдельную систему диагностики ошибок планирования.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="erp pilot">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>erp pilot</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/pilot.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/pilot-180.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="erp pilot"><img src="./icons/pilot.svg" width="40" height="40" alt=""><span>erp <strong>pilot</strong></span></a>
+      <label class="language"><span class="sr-only" data-i18n="language">Язык интерфейса</span><select id="language" aria-label="Язык интерфейса"><option value="ru">RU</option><option value="ro">RO</option><option value="en">EN</option></select></label>
+    </header>
+    <main>
+      <div class="eyebrow"><span class="small-mark" aria-hidden="true"></span><span data-i18n="tagline">Планирование под контролем</span></div>
+      <h1 data-i18n="title">Ваш рабочий пилот</h1>
+      <p class="intro" data-i18n="intro">Проверяйте ошибки планирования и работайте с отдельной копией ERP с телефона.</p>
+      <section class="entry-card" aria-label="erp pilot">
+        <div class="card-top"><img src="./icons/pilot.svg" width="58" height="58" alt=""><div><h2>erp pilot</h2><p data-i18n="login">Вход под учётной записью владельца</p></div></div>
+        <div class="connection" id="connection" data-state="loading" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="status-text">Проверяем адрес пилота…</span></div>
+        <p class="status-detail" id="status-detail" hidden></p>
+        <a class="primary disabled" id="open-pilot" role="button" aria-disabled="true" tabindex="-1"><span data-i18n="open">Открыть пилот</span><span aria-hidden="true">↗</span></a>
+        <button class="refresh" id="refresh" type="button"><span aria-hidden="true">↻</span><span data-i18n="refresh">Обновить подключение</span></button>
+      </section>
+      <section class="install-card">
+        <div class="section-label"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18h4M10 5h4"/></svg><h2 data-i18n="installTitle">Всегда под рукой</h2></div>
+        <p data-i18n="installText">Добавьте эту страницу на главный экран телефона, чтобы открывать пилот одним касанием.</p>
+        <p class="instruction" data-i18n="ios">iPhone: «Поделиться» → «На экран Домой».</p>
+        <p class="instruction" data-i18n="android">Android: меню браузера → «Добавить на главный экран».</p>
+        <button class="install-button" id="install" type="button" hidden data-i18n="install">Установить ярлык</button>
+      </section>
+      <p class="availability"><span aria-hidden="true">◉</span><span data-i18n="availability">Для работы пилота Mac должен быть включён и подключён к интернету.</span></p>
+      <noscript><p class="availability">Для открытия пилота включите JavaScript в браузере. / Enable JavaScript to open the pilot.</p></noscript>
+    </main>
+    <footer><p data-i18n="isolation">Отдельная копия ERP · отдельная база данных</p><p data-i18n="privacy">Эта страница не хранит рабочие данные.</p></footer>
+  </div>
+</body>
+</html>
